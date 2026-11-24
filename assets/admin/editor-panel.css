@@ -1,0 +1,37 @@
+.lango7-ep-list { margin: 0; padding: 0; list-style: none; }
+.lango7-ep-lang { margin: 0 0 14px; padding: 0 0 12px; border-bottom: 1px solid #e0e0e0; }
+.lango7-ep-lang:last-child { border-bottom: 0; }
+.lango7-ep-head { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.lango7-ep-pct { margin-left: auto; font-variant-numeric: tabular-nums; color: #50575e; }
+.lango7-ep-pct.is-done { color: #007017; }
+.lango7-ep-tag { font-size: 11px; line-height: 1.6; padding: 0 6px; border-radius: 9px; background: #f0f0f1; color: #50575e; }
+.lango7-ep-tag.is-draft { background: #fcf3dc; color: #8a6100; }
+.lango7-ep-bar { height: 4px; margin: 6px 0 4px; border-radius: 2px; background: #f0f0f1; overflow: hidden; }
+.lango7-ep-bar span { display: block; height: 100%; background: #dba617; }
+.lango7-ep-bar span.is-done { background: #00a32a; }
+.lango7-ep-detail { font-size: 12px; color: #757575; }
+.lango7-ep-links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; }
+.lango7-ep-links a { text-decoration: none; }
+.lango7-ep-links a:hover { text-decoration: underline; }
+.lango7-ep-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.lango7-ep-note { color: #50575e; margin: 0 0 10px; }
+.lango7-ep-note.is-done { color: #007017; }
+.lango7-ep-status { display: flex; align-items: center; gap: 4px; margin: 0 0 10px; }
+.lango7-ep-status .components-spinner { margin: 0 4px 0 0; }
+.lango7-ep-translate { margin: 4px 0 10px; }
+.lango7-ep-translate .lango7-ep-note { margin: 6px 0 0; font-size: 12px; }
+.lango7-ep-message { margin: 0 0 8px; font-size: 12px; }
+.lango7-ep-refresh { font-size: 12px; }
+.lango7-ep-hint { color: #757575; font-size: 12px; margin: 0 0 10px; }
+.lango7-ep-lang .lango7-ep-head { width: 100%; padding: 4px 0; border: 0; background: none; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.lango7-ep-lang .lango7-ep-head:focus-visible { outline: 2px solid var(--wp-admin-theme-color, #3858e9); outline-offset: 2px; }
+.lango7-ep-caret { width: 12px; color: #757575; }
+.lango7-ep-body { margin-top: 8px; }
+.lango7-ep-steps { margin: 8px 0 0 18px; padding: 0; }
+.lango7-ep-steps > li { margin: 0 0 8px; }
+.lango7-ep-off { color: #8c8f94; }
+.lango7-ep-tr { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.lango7-ep-tr .components-base-control { width: 100%; }
+.lango7-ep-delete.components-button { margin-top: 4px; font-size: 12px; color: #d63638; }
+
+.lango7-ep-block { margin-top: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; }

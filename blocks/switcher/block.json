@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "lango7/switcher",
+	"version": "1.0.0",
+	"title": "Language Switcher",
+	"category": "widgets",
+	"icon": "translation",
+	"description": "Links to this page in each of your site's languages.",
+	"keywords": [ "language", "translate", "lango7" ],
+	"textdomain": "lango7",
+	"attributes": {
+		"style": { "type": "string", "enum": [ "list", "dropdown", "globe" ], "default": "list" },
+		"names": { "type": "string", "enum": [ "native", "name", "code" ], "default": "native" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right" ],
+		"spacing": { "margin": true, "padding": true },
+		"typography": { "fontSize": true },
+		"color": { "text": true, "background": true, "link": true }
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

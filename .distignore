@@ -1,0 +1,7 @@
+# Left out of the wordpress.org release (also read by `wp dist-archive`).
+.DS_Store
+.distignore
+.gitignore
+bin
+dist
+tests

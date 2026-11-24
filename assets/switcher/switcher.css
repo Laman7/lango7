@@ -1,0 +1,19 @@
+.lango7-switcher ul{list-style:none;margin:0;padding:0}
+.lango7-switcher--list ul{display:flex;flex-wrap:wrap;gap:.75em}
+.lango7-switcher a[aria-current]{font-weight:600}
+.lango7-switcher--dropdown{position:relative;display:inline-block}
+.lango7-switcher--dropdown summary{cursor:pointer;list-style:none}
+.lango7-switcher--dropdown summary::-webkit-details-marker{display:none}
+.lango7-switcher--dropdown summary::after{content:"";display:inline-block;margin-inline-start:.4em;border:.3em solid transparent;border-top-color:currentColor;vertical-align:-.1em}
+.lango7-switcher--dropdown ul{position:absolute;inset-inline-start:0;top:100%;z-index:1000;min-width:100%;padding:.25em 0;background:#fff;color:#111;box-shadow:0 4px 16px rgba(0,0,0,.15);border-radius:4px}
+.lango7-switcher--dropdown li a{display:block;padding:.35em .9em;white-space:nowrap;color:inherit;text-decoration:none}
+.lango7-switcher--dropdown li a:hover,.lango7-switcher--dropdown li a:focus{background:#f0f0f1}
+.lango7-switcher--globe{position:relative;display:inline-block;line-height:1}
+.lango7-switcher--globe summary{display:inline-flex;align-items:center;justify-content:center;width:2.25em;height:2.25em;border-radius:50%;cursor:pointer;list-style:none;color:inherit}
+.lango7-switcher--globe summary::-webkit-details-marker{display:none}
+.lango7-switcher--globe summary:hover,.lango7-switcher--globe[open] summary{background:rgba(127,127,127,.18)}
+.lango7-switcher--globe summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.lango7-switcher-globe{display:block;width:1.25em;height:1.25em}
+.lango7-switcher--globe ul{position:absolute;inset-inline-end:0;top:calc(100% + .5em);z-index:1000;min-width:10em;padding:.375em;background:#fff;color:#111;border-radius:.5em;box-shadow:0 8px 24px rgba(0,0,0,.18);line-height:1.4}
+.lango7-switcher--globe li a{display:block;padding:.5em .75em;border-radius:.375em;white-space:nowrap;color:inherit;text-decoration:none}
+.lango7-switcher--globe li a:hover,.lango7-switcher--globe li a:focus,.lango7-switcher--globe li a[aria-current]{background:#f0f0f1}
