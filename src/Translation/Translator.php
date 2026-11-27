@@ -209,7 +209,7 @@ final class Translator {
 			return null;
 		}
 		$text = Placeholders::collapse( $text );
-		return Placeholders::validate( $s->text, $text ) ? $text : null;
+		return Placeholders::validate( $s->text, $text ) ? Placeholders::respace( $s->text, $text ) : null;
 	}
 
 	/**

@@ -233,6 +233,7 @@ final class ChromeController {
 			$text = Placeholders::clean( $text );
 			$text = null === $text ? null : Placeholders::collapse( $text );
 			if ( null !== $text && Placeholders::validate( $row['source_text'], $text ) ) {
+				$text = Placeholders::respace( $row['source_text'], $text );
 				$good[ (int) $row['id'] ] = $text;
 				$hashes[]                 = $row['hash'];
 			} elseif ( isset( $redo[ (int) $row['id'] ] ) ) {

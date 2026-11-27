@@ -1,4 +1,4 @@
-# Lango7 - Free WordPress Translation
+# Lango7
 
 **Translate your WordPress site into SEO-friendly language folders like `/fr/`, for free, with Chrome's built-in translator. No API key, no duplicate posts.**
 

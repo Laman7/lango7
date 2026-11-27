@@ -80,6 +80,7 @@ Every page's `<body>` gets `lango7-lang-{code}`, and translated pages also get `
 == Changelog ==
 
 = 1.22 =
+* Fixed: a translation that dropped the space beside a number or link ("1,000perkataan") gets it back, including translations already saved.
 * New "Don't translate this page": switch translation off for one post or page from the front-end language menu (under Translate this page) or from Posts and Pages (row action and bulk action), or with the switch in the block editor's Lango7 sidebar. On archives and other addresses without a post, the menu item adds the address to Do not translate URLs, and Translate this page again removes it. It is stored on the post, so it follows a changed address, and visitors see the page in the original language. Translations are kept and come back with Translate again. The Do not translate URLs list in Settings still works for paths and wildcards.
 * Translations: the language buttons and the filters are now two rows. New "Translated by" filter shows only what one service translated (Free Translate, Google, DeepL, an AI model) or what was edited by hand.
 * Settings → Switcher: new Language order card. Drag languages into the order the switcher shows them, as in Menus (or use the arrow buttons). Applies to every switcher style, menus, the block and Bricks.

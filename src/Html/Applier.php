@@ -131,7 +131,8 @@ final class Applier {
 	}
 
 	private function render( Occurrence $o, string $translated ): string {
-		$parts = preg_split( Placeholders::EDIT_TOKEN, $translated, -1, PREG_SPLIT_DELIM_CAPTURE );
+		$translated = Placeholders::respace( $o->segment->text, $translated );
+		$parts      = preg_split( Placeholders::EDIT_TOKEN, $translated, -1, PREG_SPLIT_DELIM_CAPTURE );
 		$count = count( $parts );
 		$out   = '';
 		for ( $i = 0; $i < $count; $i += 4 ) {

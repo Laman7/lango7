@@ -49,6 +49,53 @@ final class Placeholders {
 	}
 
 	/**
+	 * Put back a space an engine dropped beside a placeholder: where the source
+	 * has a space between a placeholder and a word ("<n1/> words"), a translation
+	 * that joins them ("<n1/>perkataan") gets the space again. Left alone when the
+	 * translation has no spaces at all (Chinese, Japanese, Thai…).
+	 */
+	public static function respace( string $source, string $translated ): string {
+		if ( ! str_contains( (string) preg_replace( self::EDIT_TOKEN, '', $translated ), ' ' ) ) {
+			return $translated;
+		}
+		$before = array();
+		$after  = array();
+		if ( preg_match_all( self::TOKEN, $source, $m, PREG_OFFSET_CAPTURE ) ) {
+			foreach ( $m[0] as $hit ) {
+				$token = $hit[0];
+				$at    = (int) $hit[1];
+				$end   = $at + strlen( $token );
+				if ( $at > 0 && ' ' === $source[ $at - 1 ] ) {
+					$before[ $token ] = true;
+				}
+				if ( $end < strlen( $source ) && ' ' === $source[ $end ] ) {
+					$after[ $token ] = true;
+				}
+			}
+		}
+		if ( ! $before && ! $after ) {
+			return $translated;
+		}
+		$parts = preg_split( '/(<\/?[ng]?\d+\/?>)/', $translated, -1, PREG_SPLIT_DELIM_CAPTURE );
+		$out   = '';
+		foreach ( $parts as $i => $part ) {
+			if ( 1 === $i % 2 ) {
+				$out .= $part;
+				continue;
+			}
+			// Text between tokens: the token before it is $parts[$i-1], after it $parts[$i+1].
+			if ( $i > 0 && isset( $after[ $parts[ $i - 1 ] ] ) && preg_match( '/^[\p{L}\p{N}]/u', $part ) ) {
+				$part = ' ' . $part;
+			}
+			if ( isset( $parts[ $i + 1 ] ) && isset( $before[ $parts[ $i + 1 ] ] ) && preg_match( '/[\p{L}\p{N}]$/u', $part ) ) {
+				$part .= ' ';
+			}
+			$out .= $part;
+		}
+		return $out;
+	}
+
+	/**
 	 * Collapse ASCII whitespace and trim. Non-breaking spaces are content.
 	 */
 	public static function collapse( string $text ): string {

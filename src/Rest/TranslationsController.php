@@ -252,6 +252,7 @@ final class TranslationsController {
 			if ( null === $text || ! Placeholders::validate( $row['source_text'], $text ) ) {
 				return new WP_Error( 'lango7_invalid', __( 'Free Translate returned a translation that breaks a link or formatting mark. Nothing was changed.', 'lango7' ), array( 'status' => 400 ) );
 			}
+			$text = Placeholders::respace( $row['source_text'], $text );
 		} else {
 			$pick = static fn(): string => $service;
 			add_filter( 'lango7_engine_for_language', $pick, 999 );

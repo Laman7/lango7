@@ -66,3 +66,12 @@ check( 'glossary wraps terms outside tags', 'Get a <g1/> from <1><g2/></1> or La
 check( 'glossary values for engine', array( 'g1' => 'Care Plan', 'g2' => 'Lango7' ), $wrapped->values );
 check( 'glossary unwrap', 'Dapatkan pelan penjagaan dari <1>Lango7</1>', Glossary::unwrap( 'Dapatkan <g1/> dari <1><g2/></1>', $repl ) );
 check( 'glossary unwrap rejects a dropped term', null, Glossary::unwrap( 'Dapatkan dari <1><g2/></1>', $repl ) );
+
+// An engine dropped the space beside a locked number or tag.
+check( 'respace: after a closing pair', '<1><n1/></1> perkataan <2><n2/></2> perkataan', Placeholders::respace( '<1><n1/></1> words <2><n2/></2> words', '<1><n1/></1>perkataan <2><n2/></2>perkataan' ) );
+check( 'respace: after a number', '<n1/> bahasa baharu', Placeholders::respace( '<n1/> new languages', '<n1/>bahasa baharu' ) );
+check( 'respace: before a pair', 'Hubungi <1>kami</1> sekarang', Placeholders::respace( 'Call <1>us</1> now', 'Hubungi<1>kami</1> sekarang' ) );
+check( 'respace: source had no space', 'Save <n1/>% today', Placeholders::respace( 'Save <n1/>% now', 'Save <n1/>% today' ) );
+check( 'respace: joined in source stays joined', 'x <n1/>kg y', Placeholders::respace( 'a <n1/>kg b', 'x <n1/>kg y' ) );
+check( 'respace: no spaces at all (Chinese) left alone', '<n1/>个字', Placeholders::respace( '<n1/> words', '<n1/>个字' ) );
+check( 'respace: punctuation not spaced', '<1>a</1>, b c', Placeholders::respace( '<1>a</1> , b', '<1>a</1>, b c' ) );
