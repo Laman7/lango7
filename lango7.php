@@ -3,7 +3,7 @@
  * Plugin Name:       Lango7
  * Plugin URI:        https://lango7.com
  * Description:       Translate your whole site into SEO-indexable language subfolders (/cn/, /fr/) for free with Chrome's built-in translator. No API key, no duplicate posts; every translation is stored in your own database.
- * Version:           1.22
+ * Version:           1.23
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Author:            Lango7
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LANGO7_VERSION', '1.22' );
+define( 'LANGO7_VERSION', '1.23' );
 define( 'LANGO7_DB_VERSION', '2' );
 define( 'LANGO7_FILE', __FILE__ );
 define( 'LANGO7_DIR', plugin_dir_path( __FILE__ ) );
