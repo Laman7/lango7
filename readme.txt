@@ -4,7 +4,7 @@ Tags: translation, multilingual, translate, hreflang, chrome translate
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.23
+Stable tag: 1.24
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,9 @@ Show content in some languages only: `[lango7_lang code="ms,zh-Hans"]…[/lango7
 Every page's `<body>` gets `lango7-lang-{code}`, and translated pages also get `lango7-translated`, for language-specific CSS. In Bricks, the dynamic tag `{lango7_language}` gives the current language code.
 
 == Changelog ==
+
+= 1.24 =
+* Fixed: Settings → Languages showed "Also delete its 0 translations" when removing a language, and logged a PHP warning. It now shows the real number.
 
 = 1.23 =
 * Version number now matches Lango7 Pro 1.23. No other changes.

@@ -6,9 +6,9 @@ Lango7 translates the page WordPress has already rendered, so it works with Bric
 
 ## Download
 
-**[⬇ Download Lango7 v1.23](https://github.com/Laman7/lango7/releases/tag/v1.23)**
+**[⬇ Download Lango7 v1.24](https://github.com/Laman7/lango7/releases/tag/v1.24)**
 
-On the release page, under **Assets**, download **`lango7-v1.23.zip`**. Don't use "Source code (zip)": that's the raw repository, not the installable plugin.
+On the release page, under **Assets**, download **`lango7-v1.24.zip`**. Don't use "Source code (zip)": that's the raw repository, not the installable plugin.
 
 Then in WordPress go to **Plugins → Add New → Upload Plugin**, choose the zip, and click **Install Now** and **Activate**.
 

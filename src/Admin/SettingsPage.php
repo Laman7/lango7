@@ -364,6 +364,7 @@ final class SettingsPage {
 		$url     = (string) ( $status['url'] ?? home_url( '/' . $lang->prefix . '/' ) );
 		$panel   = 'lango7-lang-' . sanitize_html_class( $lang->code );
 		$catalog = Languages::catalog()[ $lang->code ] ?? array();
+		$done    = (int) ( $status['done'] ?? 0 );
 		?>
 		<li class="lango7-lang-row" data-saved="<?php echo esc_attr( $lang->code ); ?>">
 			<input type="hidden" data-field="code" value="<?php echo esc_attr( $lang->code ); ?>">
@@ -397,7 +398,7 @@ final class SettingsPage {
 				<details class="lango7-remove">
 					<summary><?php echo esc_html( sprintf( /* translators: %s: language name. */ __( 'Remove %s', 'lango7' ), $lang->name ) ); ?></summary>
 					<p class="description"><?php echo esc_html( sprintf( /* translators: 1: URL folder, 2: example original URL. */ __( 'Its pages, switcher entry, hreflang tags and sitemap entries go at once. Old links such as /%1$s/about/ redirect permanently to the original page (%2$s), so search engines drop them cleanly.', 'lango7' ), $lang->prefix, '/about/' ) ); ?></p>
-					<p><label><input type="checkbox" class="lango7-remove-delete"> <?php echo esc_html( sprintf( /* translators: %d: number of translations. */ __( 'Also delete its %d translations, including your edits (otherwise they are kept in case you add it back)', 'lango7' ), $done ) ); ?></label></p>
+					<p><label><input type="checkbox" class="lango7-remove-delete"> <?php echo esc_html( sprintf( /* translators: %s: number of translations. */ __( 'Also delete its %s translations, including your edits (otherwise they are kept in case you add it back)', 'lango7' ), number_format_i18n( $done ) ) ); ?></label></p>
 					<p><button type="button" class="button lango7-button-delete lango7-remove-button" data-code="<?php echo esc_attr( $lang->code ); ?>"><?php echo esc_html( sprintf( /* translators: %s: language name. */ __( 'Remove %s', 'lango7' ), $lang->name ) ); ?></button></p>
 				</details>
 			</div>
